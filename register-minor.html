@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/register-minor.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar menor de edad</title>
+</head>
+
+<body>
+    <header class="registrar_menor_header">
+        <img src="./assets/header_logo.png" alt="Aduana logo">
+        <h1>Registro de menor de edad</h1>
+        <img src="./assets/perfil_logo.png">
+    </header>
+
+    <main class="registrar_menor_main">
+        <div class="form-container">
+            <div class="form-minor">
+                <div class="form-sections">
+                    <div class="tutor-data">
+                        <h2>Datos del tutor</h2>
+                        <label>Nombre completo</label>
+                        <input type="text" id="nombre-tutor" name="nombre-tutor" required placeholder="Usuario Tutor">
+
+                        <label>Apellido </label>
+                        <input type="text" id="apellido-tutor" name="apellido-tutor" required
+                            placeholder="Apellido Tutor">
+
+                        <label>Parentesco</label>
+                        <select id="Parentesco" name="Parentesco">
+                            <option value="#">Seleccion el parentesco</option>
+                            <option value="padre/madre">Padre/madre</option>
+                            <option value="tio">Tio/a</option>
+                            <option value="abuelo/a">Abuelo/a</option>
+                        </select>
+                    </div>
+                    <div class="menor-data">
+                        <h2>Datos del menor</h2>
+                        <label>Nombre</label>
+                        <input type="text" id="nombre-menor" name="nombre-menor" required placeholder="Usuario menor">
+                        <label>Apellido</label>
+                        <input type="text" id="apellido-menor" name="apellido-menor" required
+                            placeholder="apellido menor">
+                        <label>Nacionalidad</label>
+                        <select id="nacionalidad" name="nacionalidad">
+                            <option value="">Seleccione una nacionalidad</option>
+                            <option value="chilena">Chilena</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="peruana">Peruana</option>
+                            <option value="colombiana">Colombiana</option>
+                            <option value="mexicana">Mexicana</option>
+                            <option value="española">Española</option>
+                            <option value="estadounidense">Estadounidense</option>
+                            <option value="venezolana">Venezolana</option>
+                            <option value="brasileña">Brasileña</option>
+                        </select>
+
+                        <label>Tipo de documento</label>
+                        <select id="tipo_documento" name="tipo_documento" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="rut">Cédula de Identidad / RUT</option>
+                            <option value="pasaporte">Pasaporte</option>
+                            <option value="dni">DNI (Documento Nacional de Identidad)</option>
+                            <option value="carnet_extranjero">Carnet de Extranjería</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <label>Numero de documento</label>
+                        <input type="text" name="numero-documento" id="numero-documento">
+
+                        <label>RUN (sin puntos ni guion)</label>
+                        <input type="text" name="run" id="run">
+
+                        <label>Fecha de nacimiento</label>
+                        <input type="date" name="nacimiento" id="nacimiento">
+
+                        <label>Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
+                        <a href="#">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <img src="./assets/logo-footer.png" alt="logo footer">
+        <p>Dirección Nacional de Aduanas
+            Plaza Sotomayor 60, Valparaíso, Chile. Fono Contact Center: 600 570 70 40</p>
+    </footer>
+
+
+</body>
+
+</html>

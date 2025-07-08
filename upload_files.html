@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sube tus documentos</title>
+    <link rel="stylesheet" href="css/upload_files.css">
+</head>
+<body>
+    <header class="upload-document-header">
+        <img src="./assets/header_logo.png" alt="Aduna logo">
+        <h1>Portal para subir tus documentos</h1>
+        <a href="./inicio.html">Volver</a>
+        <img src="./assets/perfil_logo.png" alt="Perfil">
+    </header>
+
+    <main>
+        <div class="upload-container">
+            <h2>Carga de Documentos</h2>
+            <form class="upload-form" method="post" enctype="multipart/form-data">
+                <div class="file-drop-area">
+                    <p>Arrastra y suelta tus archivos aquí o</p>
+                    <label for="file-input" class="file-input-label">Selecciona tus archivos</label>
+                    <input type="file" id="file-input" multiple>
+                </div>
+                <div class="file-list">
+                    <!-- Los archivos seleccionados se mostrarán aquí -->
+                </div>
+                <button type="submit" class="upload-button">Subir Archivos</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <img src="./assets/logo-footer.png" alt="logo footer">
+        <p>Dirección Nacional de Aduanas
+            Plaza Sotomayor 60, Valparaíso, Chile. Fono Contact Center: 600 570 70 40</p>
+    
+    </footer>
+
+</body>
+</html>

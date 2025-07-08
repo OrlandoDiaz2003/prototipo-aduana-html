@@ -1,4 +1,4 @@
-/* Variables de color */
+/* Variables de color consistentes */
 :root {
   --bg-dark: #2c3e50;
   --header-dark: #1a2a3a;
@@ -58,41 +58,36 @@ body {
   text-align: center;
 }
 
-/* Contenedor principal */
+/* Main content - Contenedor unificado */
 .register_vehicule_main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 2rem;
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
 }
 
-/* Contenedor del formulario */
 .form-container {
   background-color: var(--form-bg);
   border-radius: 8px;
-  width: 100%;
-  max-width: 1000px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  overflow: hidden; /* Para mantener los bordes redondeados */
 }
 
-/* Secciones del formulario */
 .form-sections {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 0; /* Eliminamos el gap entre columnas */
 }
 
 .personal-data, .vehicule-data {
   padding: 2rem;
 }
 
-/* Borde divisorio */
+/* Borde divisorio entre columnas */
 .vehicule-data {
   border-left: 1px solid var(--border-color);
 }
 
-/* Títulos de sección */
 .personal-data h2, .vehicule-data h2 {
   color: var(--text-dark);
   margin-bottom: 1.5rem;
@@ -101,10 +96,10 @@ body {
   padding-bottom: 0.5rem;
 }
 
-/* Estilos de formulario */
-.vehicle-form {
-  display: flex;
-  flex-direction: column;
+/* Formularios */
+form {
+  display: grid;
+  gap: 1.2rem;
 }
 
 label {
@@ -117,7 +112,6 @@ label {
 input, select {
   width: 100%;
   padding: 0.8rem 1rem;
-  margin-bottom: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 1rem;
@@ -141,16 +135,20 @@ select {
 
 /* Botón de registro */
 .register-button {
+  display: block;
   background-color: var(--button-blue);
   color: white;
-  border: none;
+  text-align: center;
   padding: 1rem;
-  font-size: 1.1rem;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
   font-weight: 600;
-  cursor: pointer;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
-  margin-top: 1rem;
+  margin-top: -1px; /* Para eliminar el espacio */
   width: 100%;
+  border: none;
+  cursor: pointer;
 }
 
 .register-button:hover {
@@ -180,7 +178,7 @@ footer p {
   margin: 0 auto;
 }
 
-/* Responsive */
+/* Responsive design */
 @media (max-width: 768px) {
   .register_vehicule_header {
     flex-direction: column;

@@ -1,4 +1,4 @@
-/* Variables de color */
+/* Variables de color consistentes */
 :root {
   --bg-dark: #2c3e50;
   --header-dark: #1a2a3a;
@@ -9,7 +9,7 @@
   --text-light: #ecf0f1;
   --text-dark: #2c3e50;
   --border-color: #95a5a6;
-  --input-bg: #f5f5f5;
+  --dropzone-bg: #f5f5f5;
 }
 
 /* Reset básico */
@@ -29,7 +29,7 @@ body {
 }
 
 /* Header */
-.register_vehicule_header {
+.upload-document-header {
   background-color: var(--header-dark);
   padding: 1rem 2rem;
   display: flex;
@@ -38,18 +38,18 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.register_vehicule_header img:first-child {
+.upload-document-header img:first-child {
   height: 50px;
 }
 
-.register_vehicule_header img:last-child {
+.upload-document-header img:last-child {
   height: 40px;
   border-radius: 50%;
   border: 2px solid var(--button-blue);
   cursor: pointer;
 }
 
-.register_vehicule_header h1 {
+.upload-document-header h1 {
   color: var(--text-light);
   font-size: 1.5rem;
   font-weight: 500;
@@ -58,8 +58,21 @@ body {
   text-align: center;
 }
 
-/* Contenedor principal */
-.register_vehicule_main {
+.upload-document-header a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.upload-document-header a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content */
+main {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -67,93 +80,102 @@ body {
   padding: 2rem;
 }
 
-/* Contenedor del formulario */
-.form-container {
+.upload-container {
   background-color: var(--form-bg);
   border-radius: 8px;
-  width: 100%;
-  max-width: 1000px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-/* Secciones del formulario */
-.form-sections {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.personal-data, .vehicule-data {
   padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Borde divisorio */
-.vehicule-data {
-  border-left: 1px solid var(--border-color);
-}
-
-/* Títulos de sección */
-.personal-data h2, .vehicule-data h2 {
+.upload-container h2 {
   color: var(--text-dark);
+  text-align: center;
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   border-bottom: 2px solid var(--button-blue);
   padding-bottom: 0.5rem;
 }
 
-/* Estilos de formulario */
-.vehicle-form {
+/* Formulario de subida */
+.upload-form {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-input, select {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1rem;
-  background-color: var(--input-bg);
+.file-drop-area {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--dropzone-bg);
   transition: all 0.3s ease;
 }
 
-input:focus, select:focus {
-  outline: none;
+.file-drop-area:hover {
   border-color: var(--button-blue);
-  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2);
+  background-color: rgba(41, 128, 185, 0.05);
 }
 
-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1em;
+.file-drop-area p {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
 }
 
-/* Botón de registro */
-.register-button {
+.file-input-label {
+  display: inline-block;
+  background-color: var(--button-blue);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.file-input-label:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#file-input {
+  display: none;
+}
+
+.file-list {
+  margin-top: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.file-list div {
+  background-color: var(--dropzone-bg);
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upload-button {
   background-color: var(--button-blue);
   color: white;
   border: none;
   padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
-  width: 100%;
 }
 
-.register-button:hover {
+.upload-button:hover {
   background-color: var(--button-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -180,33 +202,24 @@ footer p {
   margin: 0 auto;
 }
 
-/* Responsive */
+/* Responsive design */
 @media (max-width: 768px) {
-  .register_vehicule_header {
+  .upload-document-header {
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
   }
 
-  .register_vehicule_header h1 {
-    font-size: 1.3rem;
+  .upload-document-header h1 {
+    font-size: 1.2rem;
     margin: 0.5rem 0;
   }
 
-  .register_vehicule_main {
+  main {
     padding: 1rem;
   }
 
-  .form-sections {
-    grid-template-columns: 1fr;
-  }
-
-  .vehicule-data {
-    border-left: none;
-    border-top: 1px solid var(--border-color);
-  }
-
-  .personal-data, .vehicule-data {
+  .upload-container {
     padding: 1.5rem;
   }
 
