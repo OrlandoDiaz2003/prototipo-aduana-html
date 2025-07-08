@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+    <header class="register-header">
+        <img src="./assets/header_logo.png" alt="logo aduana">
+        <a href="./login.html">Volver</a>
+    </header>
+
+    <main class="register-form">
+        <form>
+            <img src="./assets/header_logo.png" alt="logo aduana">
+
+            <div class="personal-data">
+                <label>Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+            
+                <label>Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+            
+                <label>Correo electronico</label>
+                <input type="email" id="correo" name="correo" placeholder="usuario@gmail.com">
+
+                <label>Numero de telefono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+569 0000000">
+            
+                <label>Nacionalidad</label>
+                <select id="nacionalidad" name="nacionalidad">
+                    <option value="">Seleccione una nacionalidad</option>
+                    <option value="chilena">Chilena</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="peruana">Peruana</option>
+                    <option value="colombiana">Colombiana</option>
+                    <option value="mexicana">Mexicana</option>
+                    <option value="española">Española</option>
+                    <option value="estadounidense">Estadounidense</option>
+                    <option value="venezolana">Venezolana</option>
+                    <option value="brasileña">Brasileña</option>
+                </select>
+            </div>
+
+            <div class="account-data">
+                <label>Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="*********">
+                <label>Repetir contraseña</label>
+                <input type="password" id="repetir-contraseña" name="repetir-contraseña" placeholder="*********">
+            </div>
+
+            <div class="user-documents">
+                <label>Tipo de documento</label>
+                <select id="tipo_documento" name="tipo_documento" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="rut">Cédula de Identidad / RUT</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="dni">DNI (Documento Nacional de Identidad)</option>
+                    <option value="carnet_extranjero">Carnet de Extranjería</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label>Numero de documento</label>
+                <input type="text" name="numero-documento" id="numero-documento">
+                <label>RUN (sin puntos ni guion)</label>
+                <input type="text" name="run" id="run">
+            </div>
+            </form>
+        <a href="#">Registrarse</a>
+    </main>
+
+</body>
+</html>
