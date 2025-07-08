@@ -1,263 +1,204 @@
-/* Reset y variables de color */
+/* Variables de color */
 :root {
-    --bg-dark: #2c3e50; /* Azul oscuro para fondo */
-    --surface-dark: #1a2a3a; /* Azul más oscuro para superficies */
-    --surface-dark-hover: #223344; /* Azul intermedio para hovers */
-    --border-dark: #3d5166; /* Borde azul grisáceo */
-    --primary-text: #ecf0f1; /* Texto principal blanco */
-    --secondary-text: #bdc3c7; /* Texto secundario gris claro */
-    --accent-blue: #3498db; /* Azul claro para acentos */
-    --accent-blue-dark: #2980b9; /* Azul más oscuro para botones */
-    --chatbot-bg: rgba(41, 128, 185, 0.3); /* Fondo chatbot */
+  --bg-dark: #2c3e50;
+  --header-dark: #1a2a3a;
+  --footer-dark: #1a2a3a;
+  --form-bg: #d5dbdd;
+  --button-blue: #2980b9;
+  --button-hover: #3498db;
+  --text-light: #ecf0f1;
+  --text-dark: #2c3e50;
+  --border-color: #95a5a6;
+  --chatbot-bg: rgba(41, 128, 185, 0.8);
 }
 
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--primary-text);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
 .inicio-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--surface-dark);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background-color: var(--header-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-    height: 50px;
+.inicio-header img:first-child {
+  height: 50px;
 }
 
-.inicio-header nav {
-    display: flex;
-    gap: 1.5rem;
+.inicio-header img:last-child {
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--button-blue);
+  cursor: pointer;
 }
 
 .inicio-header a {
-    text-decoration: none;
-    color: var(--secondary-text);
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 4px;
-    text-transform: uppercase;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
 .inicio-header a:hover {
-    color: var(--primary-text);
-    background-color: var(--surface-dark-hover);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Main content - Estructura dividida */
-.inicio-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "hero"
-        "tramites"
-        "chatbot";
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-    width: 100%;
-    flex: 1;
+/* Main content */
+.inicio-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  flex: 1;
 }
 
-/* Sección Hero */
-.inicio-body > section:first-child {
-    grid-area: hero;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    background-color: var(--surface-dark);
-    border-radius: 8px;
-    padding: 2.5rem;
-    border: 1px solid var(--border-dark);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+/* Sección de trámites */
+.tramite {
+  background-color: var(--form-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.inicio-body > section:first-child h1 {
-    color: var(--primary-text);
-    font-size: 2.5rem;
-    font-weight: 700;
+.tramite h1 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--button-blue);
+  padding-bottom: 0.5rem;
 }
 
-.inicio-body > section:first-child h2 {
-    color: var(--secondary-text);
-    font-size: 1.5rem;
-    font-weight: 400;
-    max-width: 80%;
+.tramite a {
+  display: block;
+  background-color: var(--button-blue);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.inicio-body > section:first-child img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-top: 1rem;
-    border: 1px solid var(--border-dark);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.tramite a:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección Trámites */
-.tramites-disponibles {
-    grid-area: tramites;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    background-color: #d5dbdd; /* Gris más oscuro como en los otros formularios */
-    border-radius: 8px;
-    padding: 2.5rem;
-    border: 1px solid #bdc3c7;
-}
-
-.tramites-disponibles h1 {
-    color: var(--surface-dark); /* Azul oscuro para títulos */
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.tramites-disponibles h2 {
-    color: var(--surface-dark);
-    font-size: 1.3rem;
-    font-weight: 500;
-    border-bottom: 1px solid #bdc3c7;
-    padding-bottom: 0.75rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.tramites-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
-}
-
-.tramites-disponibles a {
-    display: flex;
-    align-items: center;
-    min-height: 80px;
-    background-color: #f5f5f5; /* Fondo gris claro para los botones */
-    padding: 1.25rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--surface-dark); /* Texto azul oscuro */
-    transition: all 0.3s ease;
-    border-left: 5px solid var(--accent-blue-dark);
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.tramites-disponibles a:hover {
-    background-color: #e8e8e8;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Sección Chatbot */
+/* Sección chatbot */
 .chatbot {
-    grid-area: chatbot;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    background-color: var(--accent-blue-dark);
-    border-radius: 8px;
-    padding: 2.5rem;
-    text-align: center;
-    border: 1px solid var(--accent-blue);
-    margin-bottom: 2rem;
-}
-
-.chatbot a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    background-color: var(--chatbot-bg);
-    transition: all 0.3s ease;
-}
-
-.chatbot a:hover {
-    background-color: rgba(41, 128, 185, 0.5);
-    transform: scale(1.05);
+  background-color: var(--chatbot-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--button-blue);
+  margin-bottom: 2rem;
 }
 
 .chatbot img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
-/* Responsive Design */
+.chatbot a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.chatbot:hover {
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-dark);
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .inicio-header {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-    }
+  .inicio-header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
 
-    .inicio-body {
-        padding: 0 1rem;
-        grid-template-areas:
-            "hero"
-            "tramites"
-            "chatbot";
-        gap: 1.5rem;
-    }
+  .inicio-header a {
+    margin: 0.3rem 0;
+  }
 
-    .inicio-body > section:first-child,
-    .tramites-disponibles,
-    .chatbot {
-        padding: 1.5rem;
-    }
+  .inicio-main {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+  }
 
-    .inicio-body > section:first-child h1 {
-        font-size: 2rem;
-    }
+  .tramite, .chatbot {
+    padding: 1.5rem;
+  }
 
-    .inicio-body > section:first-child h2 {
-        font-size: 1.2rem;
-        max-width: 100%;
-    }
+  footer {
+    padding: 1.5rem;
+  }
+}
 
-    .tramites-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .chatbot a {
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .chatbot img {
-        width: 60px;
-        height: 60px;
-    }
+@media (min-width: 992px) {
+  .inicio-main {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+  
+  .chatbot {
+    position: sticky;
+    top: 20px;
+  }
 }
