@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="./css/declare_product.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarar producto vegetal o animal</title>
+</head>
+
+<body>
+    <header class="declare_product_header">
+        <img src="./assets/header_logo.png" alt="Logo Aduana">
+        <h1>Declarar producto</h1>
+        <img src="./assets/perfil_logo.png" alt="Perfil usuario">
+    </header>
+
+    <main class="declare_product_main">
+        <div class="form-container">
+            <form class="product-form">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="producto">Nombre producto</label>
+                        <input type="text" id="producto" name="nombre_producto" placeholder="Nombre producto" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formato">Formato</label>
+                            <input type="text" id="formato" name="formato" placeholder="envasado, curado..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unidad de medida</label>
+                        <input type="text" id="unidad-de-medida" name="unidad-de-medida" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de producto</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="animal" name="tipo_producto" value="Animal" required>
+                                <label for="animal">Animal</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="vegetal" name="tipo_producto" value="Vegetal">
+                                <label for="vegetal">Vegetal</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pais_de_origen">País de origen</label>
+                        <select id="pais_de_origen" name="pais_de_origen" required>
+                            <option value="">Seleccione el país de origen</option>
+                            <option value="chile">Chile</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="peru">Perú</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="mexico">México</option>
+                            <option value="españa">España</option>
+                            <option value="estados_unidos">Estados Unidos</option>
+                            <option value="venezuela">Venezuela</option>
+                            <option value="brasil">Brasil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="declare_product_footer">
+        <img src="./assets/logo-footer.png" alt="Logo Aduanas">
+        <p>Dirección Nacional de Aduanas<br>
+            Plaza Sotomayor 60, Valparaíso, Chile.<br>
+            Fono Contact Center: 600 570 70 40</p>
+    </footer>
+</body>
+
+</html>
