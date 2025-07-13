@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">  <!-- Cambiado a español -->
+
+<head>
+    <link rel="stylesheet" href="./css/check_status.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta el estado de tus trámites aduaneros">  <!-- SEO -->
+    <title>Consultar estado de trámites | Aduanas</title>  <!-- Más descriptivo -->
+</head>
+
+<body>
+    <header class="consultar_tramite_header">
+        <a href="inicio.html" aria-label="Volver al inicio">  <!-- Accesibilidad -->
+            <img src="./assets/header_logo.png" alt="Logo Aduana" class="header-logo">
+        </a>
+        <h1>Consultar estado de trámites</h1>
+        <div class="profile-section">
+            <img src="./assets/perfil_logo.png" alt="Perfil usuario" class="profile-pic">
+            <span class="user-name">Usuario</span>  <!-- Nombre de usuario -->
+        </div>
+    </header>
+
+    <main class="consultar_tramite_main">
+        <section class="search-section">  <!-- Sección de búsqueda -->
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="search-input">Buscar trámite:</label>
+                    <input type="text" id="search-input" placeholder="Número de trámite o tipo">
+                    <button type="submit" class="search-button">Buscar</button>
+                </div>
+                <div class="filter-group">
+                    <label for="status-filter">Filtrar por estado:</label>
+                    <select id="status-filter">
+                        <option value="all">Todos</option>
+                        <option value="approved">Aceptados</option>
+                        <option value="pending">Pendientes</option>
+                        <option value="rejected">Rechazados</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <section class="results-section">  <!-- Sección de resultados -->
+            <div class="table-responsive">  <!-- Contenedor para scroll en móviles -->
+                <table class="tramites-table">
+                    <thead>
+                        <tr>
+                            <th>N° Trámite</th>  <!-- Más corto -->
+                            <th>Tipo de trámite</th>
+                            <th>Fecha inicio</th>  <!-- Más corto -->
+                            <th>Estado</th>
+                            <th>Acciones</th>  <!-- Nueva columna -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="N° Trámite">1234</td>
+                            <td data-label="Tipo">Declaración de exportación</td>  <!-- Tilde corregida -->
+                            <td data-label="Fecha">15/07/2025</td>
+                            <td data-label="Estado"><span class="status-badge approved">Aceptado</span></td>  <!-- Corregido "Acceptado" -->
+                            <td data-label="Acciones">
+                                <button class="action-button view-details">Ver detalles</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="N° Trámite">12321</td>
+                            <td data-label="Tipo">Registro de vehículo</td>  <!-- Tilde añadida -->
+                            <td data-label="Fecha">15/04/2025</td>
+                            <td data-label="Estado"><span class="status-badge approved">Aceptado</span></td>
+                            <td data-label="Acciones">
+                                <button class="action-button view-details">Ver detalles</button>
+                            </td>
+                        </tr>
+                        <!-- Ejemplo de otros estados -->
+                        <tr>
+                            <td data-label="N° Trámite">4567</td>
+                            <td data-label="Tipo">Importación temporal</td>
+                            <td data-label="Fecha">20/06/2025</td>
+                            <td data-label="Estado"><span class="status-badge pending">Pendiente</span></td>
+                            <td data-label="Acciones">
+                                <button class="action-button view-details">Ver detalles</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">  <!-- Navegación -->
+                <button disabled>Anterior</button>
+                <span class="current-page">1</span>
+                <button>Siguiente</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="consultar_tramite_footer">
+        <div class="footer-content">
+            <img src="./assets/logo-footer.png" alt="Logo Aduanas" class="footer-logo">
+            <div class="footer-info">
+                <p>Dirección Nacional de Aduanas</p>
+                <p>Plaza Sotomayor 60, Valparaíso, Chile.</p>
+                <p>Fono Contact Center: <a href="tel:+566005707040">600 570 70 40</a></p>  <!-- Teléfono clickeable -->
+            </div>
+            <div class="footer-links">
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Ayuda</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
